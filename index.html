@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gestão Usuários</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/bootstrap-flatly.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <header>
+        <div class="row">
+          <div class="col-4 h4 tituloPrimario">Gestão de Usuários</div>
+        </div>
+      </header>
+
+      <section class="row">
+        <button
+          id="btnAdicionarUsuario"
+          class="col-2 col-sm-offset-10 btn btn-sm botao_primary"
+        >
+          <i class="fa-solid fa-plus"></i> Adicionar novo
+        </button>
+      </section>
+
+      <div class="listaPrincipal">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col" class="text-center">ID</th>
+              <th scope="col" class="text-center">Nome</th>
+              <th scope="col" class="text-center">CPF</th>
+              <th scope="col" class="text-center">Endereço</th>
+              <th scope="col" class="text-center"></th>
+              <th scope="col" class="text-center"></th>
+            </tr>
+          </thead>
+          <tbody class="text-center" id="tbodyListaUsuarios"></tbody>
+        </table>
+        <div class="text-center" id="divNumeroTotalUsuarios"></div>
+      </div>
+
+      <footer>
+        <div class="row p-3 justify-content-center fixed-bottom">
+          <div class="col-sm-12 text-center">
+            &#169; Gestão de Usuários - Todos os direitos reservados
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div
+      id="modalCadastroEdicaoUsuario"
+      class="modal fade bd-example-modal-lg"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title h4">Cadastrar Novo Usuário</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="formCadastroUsuario">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputNome">Nome</label>
+                  <input type="text" class="form-control" id="inputNome" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputCpf">CPF</label>
+                  <input type="text" class="form-control" id="inputCpf" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="inputCep">CEP</label>
+                  <input type="text" class="form-control" id="inputCep" required>
+                </div>
+                <div class="form-group col-md-9">
+                  <label for="inputLogradouro">Logradouro</label>
+                  <input type="text" class="form-control" id="inputLogradouro" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <label for="inputNum">Num</label>
+                  <input type="text" class="form-control" id="inputNum" required>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputBairro">Bairro</label>
+                  <input type="text" class="form-control" id="inputBairro" required>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputCidade">Cidade</label>
+                  <input type="text" class="form-control" id="inputCidade" required>
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="inputUf">UF</label>
+                  <input type="text" class="form-control" id="inputUf" required>
+                </div>
+              </div>
+              
+              <button type="submit" class="btn botao_primary col-12">
+                Cadastrar
+              </button>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/home.js"></script>
+  </body>
+</html>
